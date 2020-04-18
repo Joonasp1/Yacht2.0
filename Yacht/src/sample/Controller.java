@@ -15,7 +15,8 @@ import java.io.IOException;
 public class Controller {
 
     private final String reeglidTekst = "Reeglid\n" +
-            "Siia tulevad reeglid.";
+            "Siia tulevad reeglid.\n" +
+            "Pane need kirja Controller-klassis.";
 
     public void mängi(ActionEvent sündmus) throws IOException {
         Parent juur = FXMLLoader.load(getClass().getResource("mäng.fxml"));
@@ -27,14 +28,14 @@ public class Controller {
     }
 
     public void reeglid(ActionEvent sündmus) {
-        final Stage dialog = new Stage();
-        dialog.initModality(Modality.APPLICATION_MODAL);
-        dialog.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
-        VBox dialogVbox = new VBox(20);
-        dialogVbox.getChildren().add(new Text(reeglidTekst));
-        Scene dialogScene = new Scene(dialogVbox, 300, 200);
-        dialog.setScene(dialogScene);
-        dialog.show();
+        final Stage reeglid = new Stage();
+        reeglid.initModality(Modality.APPLICATION_MODAL);
+        reeglid.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
+        VBox reegliteKast = new VBox(20);
+        reegliteKast.getChildren().add(new Text(reeglidTekst));
+        Scene reegliteStseen = new Scene(reegliteKast, 300, 200);
+        reeglid.setScene(reegliteStseen);
+        reeglid.show();
     }
 
     public void lahku() {

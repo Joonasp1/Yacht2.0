@@ -4,11 +4,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="960.0" spacing="80.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
       <Text layoutX="284.0" layoutY="61.0" scaleX="5.0" scaleY="5.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Yacht" wrappingWidth="30.73672103881836" />
-      <Button layoutX="117.0" layoutY="266.0" mnemonicParsing="false" onAction="#reeglid" scaleX="3.0" scaleY="3.0" text="Reeglid" />
       <Button layoutX="416.0" layoutY="266.0" mnemonicParsing="false" onAction="#mängi" scaleX="3.0" scaleY="3.0" scaleZ="3.0" text="Mängima" />
+      <Button layoutX="117.0" layoutY="266.0" mnemonicParsing="false" onAction="#reeglid" scaleX="3.0" scaleY="3.0" text="Reeglid" />
       <Button layoutX="274.0" layoutY="343.0" mnemonicParsing="false" onAction="#lahku" text="Lahku" />
    </children>
-</Pane>
+</VBox>
