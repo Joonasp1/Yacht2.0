@@ -10,8 +10,17 @@ public class Mäng {
 
     private int hetkeMängijaIndeks;
 
-    public void alusta() {//Mängu alustamine
+    public Mäng() {
         controller = MänguController.Instance;
+        alusta();
+    }
+
+    public void alusta() {//Mängu alustamine
+        Mängija mängija1 = new Mängija("Mängija 1");
+        Mängija mängija2 = new Mängija("Mängija 2");
+        mängijad = new Mängija[] {mängija1, mängija2};
+
+        järgmine();
     }
 
     public void järgmine() {//Meetod valib uueks käiguks uue mängija
@@ -25,6 +34,9 @@ public class Mäng {
     }
 
     public void käik(Mängija mängija) {
+
+        controller.määraKäik(mängija);
+
         /*
         System.out.println(mängija.getNimi() + " käik");
         valik = "";

@@ -37,7 +37,7 @@ public class MänguController implements Initializable {
     }
 
     public void määraKäik(Mängija mängija) {
-        käiguLabel.setText(mängija.getNimi());
+        käiguLabel.setText(mängija.getNimi() + " käik");
     }
 
     public void määraTäringud(int[] numbrid) { // Muudab täringute pildid vastavalt etteantud numbritele.
@@ -46,6 +46,10 @@ public class MänguController implements Initializable {
         for (int i = 0; i < 5; i++) {
             täringud[i].setImage(täringutePildid[numbrid[i]-1]);
         }
+    }
+
+    public void valiSkoorimistingimus() {
+
     }
 
     public void veereta() {

@@ -20,11 +20,13 @@ public class MenüüController {
 
     public void mängi(ActionEvent sündmus) throws IOException {
         Parent juur = FXMLLoader.load(getClass().getResource("mäng.fxml"));
-        Scene mäng = new Scene(juur);
+        Scene mängustseen = new Scene(juur);
         Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
 
-        lava.setScene(mäng);
+        lava.setScene(mängustseen);
         lava.show();
+
+        new Mäng();
     }
 
     public void reeglid(ActionEvent sündmus) {
