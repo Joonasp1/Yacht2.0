@@ -1,6 +1,7 @@
 package sample;
 
 public class Mäng {
+    private MänguController controller;
     private Mängija[] mängijad;
     private Täringud täringud = new Täringud();
     private String valik;
@@ -10,7 +11,7 @@ public class Mäng {
     private int hetkeMängijaIndeks;
 
     public void alusta() {//Mängu alustamine
-        
+        controller = MänguController.Instance;
     }
 
     public void järgmine() {//Meetod valib uueks käiguks uue mängija
@@ -52,7 +53,7 @@ public class Mäng {
     }
 
     public void kokkuvõte() {//Teeb kokkuvõtte mängust ja annab teada, kes võitis
-        System.out.println("Mängijate tulemused:");
+        //System.out.println("Mängijate tulemused:");
         int võitskoor = -1;
         String võitjanimi = "";
         for (Mängija mängija : mängijad){

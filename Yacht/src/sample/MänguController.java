@@ -12,6 +12,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class MänguController implements Initializable {
+
+    public static MänguController Instance;
+
     @FXML
     Label käiguLabel;
 
@@ -24,6 +27,8 @@ public class MänguController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        Instance = this;
+
         täringutePildid = new Image[5];
         for (int i = 0; i < 5; i++) {
             File fail = new File("src/resources/pildid/täring_" + (i + 1) + ".png");
