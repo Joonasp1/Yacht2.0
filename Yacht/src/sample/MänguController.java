@@ -1,13 +1,20 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -48,12 +55,21 @@ public class MänguController implements Initializable {
         }
     }
 
-    public void valiSkoorimistingimus() {
+    public void valiSkoorimistingimus(ActionEvent sündmus) throws IOException{
+        Parent juur = FXMLLoader.load(getClass().getResource("tingimused.fxml"));
+        Scene tingimustestseen = new Scene(juur);
+        Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
+
+        lava.setScene(tingimustestseen);
+        lava.show();
+    }
+
+    public void ühed(ActionEvent sündmus){
 
     }
 
-    public void veereta() {
 
+    public void veereta() {
         määraTäringud(new int[] {1,2,3,4,5});
     }
 }

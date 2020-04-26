@@ -25,7 +25,6 @@ public class MenüüController {
 
         lava.setScene(mängustseen);
         lava.show();
-
         new Mäng();
     }
 
@@ -38,6 +37,15 @@ public class MenüüController {
         Scene reegliteStseen = new Scene(reegliteKast, 300, 200);
         reeglid.setScene(reegliteStseen);
         reeglid.show();
+    }
+
+    public void reeglidtest(ActionEvent sündmus) throws IOException {
+        Parent juur = FXMLLoader.load(getClass().getResource("reeglid.fxml"));
+        Scene reeglistseen = new Scene(juur);
+        Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
+
+        lava.setScene(reeglistseen);
+        lava.show();
     }
 
     public void lahku() {

@@ -5,7 +5,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.TingimuseController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -19,12 +19,12 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="301.0" text="1. Ühed">
+      <Button mnemonicParsing="false" onAction="#ühed" prefHeight="51.0" prefWidth="301.0" text="1. Ühed">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="304.0" text="2. Kahed" GridPane.rowIndex="1">
+      <Button mnemonicParsing="false" onAction="#kahed" prefHeight="51.0" prefWidth="304.0" text="2. Kahed" GridPane.rowIndex="1">
          <font>
             <Font size="24.0" />
          </font>
@@ -34,7 +34,7 @@
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="304.0" text="3. Kolmed" GridPane.rowIndex="2">
+      <Button mnemonicParsing="false" onAction="#kolmed" prefHeight="51.0" prefWidth="304.0" text="3. Kolmed" GridPane.rowIndex="2">
          <font>
             <Font size="24.0" />
          </font>
