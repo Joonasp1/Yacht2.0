@@ -12,6 +12,7 @@ public class Mäng {
 
     public Mäng() {
         controller = MänguController.Instance;
+        controller.alustaMäng(this);
         alusta();
     }
 
@@ -76,5 +77,21 @@ public class Mäng {
             //System.out.println(mängija.getNimi() + ": " + mängija.getSkoor());
         }
         //System.out.println("Võitja on " + võitjanimi + " punktisummaga " + võitskoor);
+    }
+
+    public Mängija[] getMängijad() {
+        return mängijad;
+    }
+
+    public Täringud getTäringud() {
+        return täringud;
+    }
+
+    public Skoorimine getSkoor() {
+        return skoor;
+    }
+
+    public int getHetkeMängijaIndeks() {
+        return hetkeMängijaIndeks;
     }
 }

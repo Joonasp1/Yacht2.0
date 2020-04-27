@@ -4,7 +4,7 @@ public class Täringud {
     private int[] täringud = new int[5];
     private int kordus = 0;
 
-    public int[] getTäringud() {
+    public int[] getTäringuVäärtused() {
         return täringud;
     }
 
