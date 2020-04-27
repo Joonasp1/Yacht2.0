@@ -19,62 +19,62 @@
       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <Button mnemonicParsing="false" onAction="#ühed" prefHeight="51.0" prefWidth="301.0" text="1. Ühed">
+      <Button fx:id="nupp1" mnemonicParsing="false" onAction="#ühed" prefHeight="51.0" prefWidth="301.0" text="1. Ühed">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" onAction="#kahed" prefHeight="51.0" prefWidth="304.0" text="2. Kahed" GridPane.rowIndex="1">
+      <Button fx:id="nupp2" mnemonicParsing="false" onAction="#kahed" prefHeight="51.0" prefWidth="304.0" text="2. Kahed" GridPane.rowIndex="1">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="305.0" text="8. Nelik" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <Button fx:id="nupp8" mnemonicParsing="false" onAction="#nelik" prefHeight="51.0" prefWidth="305.0" text="8. Nelik" GridPane.columnIndex="1" GridPane.rowIndex="1">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" onAction="#kolmed" prefHeight="51.0" prefWidth="304.0" text="3. Kolmed" GridPane.rowIndex="2">
+      <Button fx:id="nupp3" mnemonicParsing="false" onAction="#kolmed" prefHeight="51.0" prefWidth="304.0" text="3. Kolmed" GridPane.rowIndex="2">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="306.0" text="7. Maja" GridPane.columnIndex="1">
+      <Button fx:id="nupp7" mnemonicParsing="false" onAction="#maja" prefHeight="51.0" prefWidth="306.0" text="7. Maja" GridPane.columnIndex="1">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="306.0" text="9. 1-2-3-4-5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button fx:id="nupp9" mnemonicParsing="false" onAction="#allrida" prefHeight="51.0" prefWidth="306.0" text="9. 1-2-3-4-5" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="316.0" text="4. Neljad" GridPane.rowIndex="3">
+      <Button fx:id="nupp4" mnemonicParsing="false" onAction="#neljad" prefHeight="51.0" prefWidth="316.0" text="4. Neljad" GridPane.rowIndex="3">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="304.0" text="10. 2-3-4-5-6" GridPane.columnIndex="1" GridPane.rowIndex="3">
+      <Button fx:id="nupp10" mnemonicParsing="false" onAction="#ülarida" prefHeight="51.0" prefWidth="304.0" text="10. 2-3-4-5-6" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="300.0" text="5. Viied" GridPane.rowIndex="4">
+      <Button fx:id="nupp5" mnemonicParsing="false" onAction="#viied" prefHeight="51.0" prefWidth="300.0" text="5. Viied" GridPane.rowIndex="4">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="307.0" text="11. Täringute summa" GridPane.columnIndex="1" GridPane.rowIndex="4">
+      <Button fx:id="nupp11" mnemonicParsing="false" onAction="#summa" prefHeight="51.0" prefWidth="307.0" text="11. Täringute summa" GridPane.columnIndex="1" GridPane.rowIndex="4">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="305.0" text="6. Kuued" GridPane.rowIndex="5">
+      <Button fx:id="nupp6" mnemonicParsing="false" onAction="#kuued" prefHeight="51.0" prefWidth="305.0" text="6. Kuued" GridPane.rowIndex="5">
          <font>
             <Font size="24.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="304.0" text="12. Yacht" GridPane.columnIndex="1" GridPane.rowIndex="5">
+      <Button fx:id="nupp12" mnemonicParsing="false" onAction="#yacht" prefHeight="51.0" prefWidth="304.0" text="12. Yacht" GridPane.columnIndex="1" GridPane.rowIndex="5">
          <font>
             <Font size="24.0" />
          </font>
