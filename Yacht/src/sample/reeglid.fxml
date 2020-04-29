@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenüüController">
    <children>
       <Text layoutX="198.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reeglid" textAlignment="CENTER" wrappingWidth="203.13671875">
          <font>
@@ -82,5 +82,10 @@
             <Font size="16.0" />
          </font>
       </Text>
+      <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#tagasi" text="Tagasi">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
    </children>
 </Pane>

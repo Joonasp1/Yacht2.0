@@ -11,7 +11,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -36,36 +40,35 @@ public class MänguController implements Initializable {
     Image[] täringutePildid;
 
     @FXML
-    Button nupp1;
+    Button nupp1 = new Button("1. Ühed");
     @FXML
-    Button nupp2;
+    Button nupp2 = new Button("2. Kahed");
     @FXML
-    Button nupp3;
+    Button nupp3 = new Button("3. Kolmed");
     @FXML
-    Button nupp4;
+    Button nupp4 = new Button("4. Neljad");
     @FXML
-    Button nupp5;
+    Button nupp5 = new Button("5. Viied");
     @FXML
-    Button nupp6;
+    Button nupp6 = new Button("6. Kuues");
     @FXML
-    Button nupp7;
+    Button nupp7 = new Button("7. Maja");
     @FXML
-    Button nupp8;
+    Button nupp8 = new Button("8. Nelik");
     @FXML
-    Button nupp9;
+    Button nupp9 = new Button("9. 1-2-3-4-5");
     @FXML
-    Button nupp10;
+    Button nupp10 = new Button("10. 2-3-4-5-6");
     @FXML
-    Button nupp11;
+    Button nupp11 = new Button("11. Täringute summa");
     @FXML
-    Button nupp12;
+    Button nupp12 = new Button("12. Yacht");
 
     int mitu = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Instance = this;
-
 
         täringutePildid = new Image[6];
         for (int i = 0; i < 6; i++) {
@@ -91,17 +94,33 @@ public class MänguController implements Initializable {
     }
 
     public void valiSkoorimistingimus(ActionEvent sündmus) throws IOException{
-        Parent juur = FXMLLoader.load(getClass().getResource("tingimused.fxml"));
-        Scene tingimustestseen = new Scene(juur);
-        Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
-
-        lava.setScene(tingimustestseen);
-        lava.show();
+        final Stage tingimused = new Stage();
+        tingimused.initModality(Modality.APPLICATION_MODAL);
+        tingimused.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
+        VBox tingimusteKast = new VBox(10);
+        tingimusteKast.getChildren().add(nupp1);
+        //nupp1.setOnMouseClicked(event -> ühed(event));
+        tingimusteKast.getChildren().add(nupp2);
+        tingimusteKast.getChildren().add(nupp3);
+        tingimusteKast.getChildren().add(nupp4);
+        tingimusteKast.getChildren().add(nupp5);
+        tingimusteKast.getChildren().add(nupp6);
+        tingimusteKast.getChildren().add(nupp7);
+        tingimusteKast.getChildren().add(nupp8);
+        tingimusteKast.getChildren().add(nupp9);
+        tingimusteKast.getChildren().add(nupp10);
+        tingimusteKast.getChildren().add(nupp11);
+        tingimusteKast.getChildren().add(nupp12);
+        Scene tingimusteStseen = new Scene(tingimusteKast, 300, 200);
+        tingimused.setScene(tingimusteStseen);
+        tingimused.show();
     }
+
 
 
     public void veereta() {
         määraTäringud(mäng.getTäringud().veereta());
+        System.out.println(mäng);
     }
 
 
@@ -111,7 +130,8 @@ public class MänguController implements Initializable {
         }
     }
 
-    public void ühed(ActionEvent sündmus)throws IOException{
+    public void ühed(MouseEvent sündmus)throws IOException{
+        System.out.println(mäng);
         int skoor = mäng.getSkoor().skoori(1,mäng.getTäringud().getTäringuVäärtused());
         System.out.println(skoor);
         nupp1.setDisable(true);

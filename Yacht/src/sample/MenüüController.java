@@ -48,6 +48,15 @@ public class MenüüController {
         lava.show();
     }
 
+    public void tagasi(ActionEvent sündmus) throws IOException{
+        Parent juur = FXMLLoader.load(getClass().getResource("menüü.fxml"));
+        Scene reeglistseen = new Scene(juur);
+        Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
+
+        lava.setScene(reeglistseen);
+        lava.show();
+    }
+
     public void lahku() {
         System.exit(0);
     }
