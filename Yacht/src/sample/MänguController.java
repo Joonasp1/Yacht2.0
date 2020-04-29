@@ -99,19 +99,102 @@ public class MänguController implements Initializable {
         tingimused.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
         VBox tingimusteKast = new VBox(10);
         tingimusteKast.getChildren().add(nupp1);
-        //nupp1.setOnMouseClicked(event -> ühed(event));
+        nupp1.setOnMouseClicked(event -> {
+            try {
+                ühed(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp2);
+        nupp2.setOnMouseClicked(event -> {
+            try {
+                kahed(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp3);
+        nupp3.setOnMouseClicked(event -> {
+            try {
+                kolmed(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp4);
+        nupp4.setOnMouseClicked(event -> {
+            try {
+                neljad(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp5);
+        nupp5.setOnMouseClicked(event -> {
+            try {
+                viied(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp6);
+        nupp6.setOnMouseClicked(event -> {
+            try {
+                kuued(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp7);
+        nupp7.setOnMouseClicked(event -> {
+            try {
+                maja(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp8);
+        nupp8.setOnMouseClicked(event -> {
+            try {
+                nelik(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp9);
+        nupp9.setOnMouseClicked(event -> {
+            try {
+                allrida(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp10);
+        nupp10.setOnMouseClicked(event -> {
+            try {
+                ülarida(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp11);
+        nupp11.setOnMouseClicked(event -> {
+            try {
+                summa(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         tingimusteKast.getChildren().add(nupp12);
-        Scene tingimusteStseen = new Scene(tingimusteKast, 300, 200);
+        nupp12.setOnMouseClicked(event -> {
+            try {
+                yacht(event);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+        Scene tingimusteStseen = new Scene(tingimusteKast, 300, 450);
         tingimused.setScene(tingimusteStseen);
         tingimused.show();
     }
@@ -131,85 +214,83 @@ public class MänguController implements Initializable {
     }
 
     public void ühed(MouseEvent sündmus)throws IOException{
-        System.out.println(mäng);
-        int skoor = mäng.getSkoor().skoori(1,mäng.getTäringud().getTäringuVäärtused());
-        System.out.println(skoor);
+        mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(1,mäng.getTäringud().getTäringuVäärtused()));
         nupp1.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void kahed(ActionEvent sündmus)throws IOException{
+    public void kahed(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(2,mäng.getTäringud().getTäringuVäärtused()));
         nupp2.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void kolmed(ActionEvent sündmus)throws IOException{
+    public void kolmed(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(3,mäng.getTäringud().getTäringuVäärtused()));
         nupp3.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void neljad(ActionEvent sündmus)throws IOException{
+    public void neljad(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(4,mäng.getTäringud().getTäringuVäärtused()));
         nupp4.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void viied(ActionEvent sündmus)throws IOException{
+    public void viied(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(5,mäng.getTäringud().getTäringuVäärtused()));
         nupp5.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void kuued(ActionEvent sündmus)throws IOException{
+    public void kuued(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(6,mäng.getTäringud().getTäringuVäärtused()));
         nupp6.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void maja(ActionEvent sündmus)throws IOException{
+    public void maja(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(7,mäng.getTäringud().getTäringuVäärtused()));
         nupp7.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void nelik(ActionEvent sündmus)throws IOException{
+    public void nelik(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(8,mäng.getTäringud().getTäringuVäärtused()));
         nupp8.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void allrida(ActionEvent sündmus)throws IOException{
+    public void allrida(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(9,mäng.getTäringud().getTäringuVäärtused()));
         nupp9.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void ülarida(ActionEvent sündmus)throws IOException{
+    public void ülarida(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(10,mäng.getTäringud().getTäringuVäärtused()));
         nupp10.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void summa(ActionEvent sündmus)throws IOException{
+    public void summa(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(11,mäng.getTäringud().getTäringuVäärtused()));
         nupp11.setDisable(true);
         mitu++;
         lõpukontroll();
     }
 
-    public void yacht(ActionEvent sündmus)throws IOException{
+    public void yacht(MouseEvent sündmus)throws IOException{
         mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(12,mäng.getTäringud().getTäringuVäärtused()));
         nupp12.setDisable(true);
         mitu++;
