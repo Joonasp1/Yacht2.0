@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MänguController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <Button fx:id="nupp1" mnemonicParsing="false" onAction="#ühed" prefHeight="51.0" prefWidth="301.0" text="1. Ühed">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp2" mnemonicParsing="false" onAction="#kahed" prefHeight="51.0" prefWidth="304.0" text="2. Kahed" GridPane.rowIndex="1">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp8" mnemonicParsing="false" onAction="#nelik" prefHeight="51.0" prefWidth="305.0" text="8. Nelik" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp3" mnemonicParsing="false" onAction="#kolmed" prefHeight="51.0" prefWidth="304.0" text="3. Kolmed" GridPane.rowIndex="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp7" mnemonicParsing="false" onAction="#maja" prefHeight="51.0" prefWidth="306.0" text="7. Maja" GridPane.columnIndex="1">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp9" mnemonicParsing="false" onAction="#allrida" prefHeight="51.0" prefWidth="306.0" text="9. 1-2-3-4-5" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp4" mnemonicParsing="false" onAction="#neljad" prefHeight="51.0" prefWidth="316.0" text="4. Neljad" GridPane.rowIndex="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp10" mnemonicParsing="false" onAction="#ülarida" prefHeight="51.0" prefWidth="304.0" text="10. 2-3-4-5-6" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp5" mnemonicParsing="false" onAction="#viied" prefHeight="51.0" prefWidth="300.0" text="5. Viied" GridPane.rowIndex="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp11" mnemonicParsing="false" onAction="#summa" prefHeight="51.0" prefWidth="307.0" text="11. Täringute summa" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp6" mnemonicParsing="false" onAction="#kuued" prefHeight="51.0" prefWidth="305.0" text="6. Kuued" GridPane.rowIndex="5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="nupp12" mnemonicParsing="false" onAction="#yacht" prefHeight="51.0" prefWidth="304.0" text="12. Yacht" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+   </children>
+</GridPane>

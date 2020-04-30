@@ -14,10 +14,6 @@ import java.io.IOException;
 
 public class MenüüController {
 
-    private final String reeglidTekst = "Reeglid\n" +
-            "Siia tulevad reeglid.\n" +
-            "Pane need kirja Controller-klassis.";
-
     public void mängi(ActionEvent sündmus) throws IOException {
         Parent juur = FXMLLoader.load(getClass().getResource("mäng.fxml"));
         Scene mängustseen = new Scene(juur);
@@ -28,6 +24,7 @@ public class MenüüController {
         new Mäng();
     }
 
+    /*
     public void reeglid(ActionEvent sündmus) {
         final Stage reeglid = new Stage();
         reeglid.initModality(Modality.APPLICATION_MODAL);
@@ -38,6 +35,7 @@ public class MenüüController {
         reeglid.setScene(reegliteStseen);
         reeglid.show();
     }
+     */
 
     public void reeglidtest(ActionEvent sündmus) throws IOException {
         Parent juur = FXMLLoader.load(getClass().getResource("reeglid.fxml"));

@@ -1,38 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MänguController">
+<AnchorPane prefHeight="540.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MänguController">
    <children>
-      <Button layoutX="532.0" layoutY="408.0" mnemonicParsing="false" onAction="#veereta" prefHeight="50.0" prefWidth="128.0" text="Veereta" />
+      <Button fx:id="veeretaNupp" layoutX="532.0" layoutY="408.0" mnemonicParsing="false" onAction="#veereta" prefHeight="50.0" prefWidth="128.0" text="Veereta" />
       <Label fx:id="käiguLabel" alignment="CENTER" layoutX="272.0" layoutY="68.0" text="Mängija 1 käik" textAlignment="CENTER" AnchorPane.leftAnchor="400.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="50.0" />
-      <Button layoutX="300.0" layoutY="408.0" mnemonicParsing="false" onAction="#valiSkoorimistingimus" prefHeight="50.0" prefWidth="128.0" text="Skoorima" />
+      <Button fx:id="tingimuseNupp" layoutX="300.0" layoutY="408.0" mnemonicParsing="false" onAction="#valiSkoorimistingimus" prefHeight="50.0" prefWidth="128.0" text="Skoorima" />
       <HBox fx:id="täringuteKast" alignment="CENTER" layoutX="155.0" layoutY="150.0" prefHeight="100.0" prefWidth="388.0" spacing="15.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="200.0">
          <children>
-            <ImageView fx:id="täring1" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="täring1" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#täring1Vajutatud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/pildid/täring_1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="täring2" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="täring2" fitHeight="50.0" fitWidth="50.0" onMouseClicked="#täring2Vajutatud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/pildid/täring_1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="täring3" fitHeight="50.0" fitWidth="50.0" layoutX="204.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="täring3" fitHeight="50.0" fitWidth="50.0" layoutX="204.0" layoutY="35.0" onMouseClicked="#täring3Vajutatud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/pildid/täring_1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="täring4" fitHeight="50.0" fitWidth="50.0" layoutX="229.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="täring4" fitHeight="50.0" fitWidth="50.0" layoutX="229.0" layoutY="35.0" onMouseClicked="#täring4Vajutatud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/pildid/täring_1.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="täring5" fitHeight="50.0" fitWidth="50.0" layoutX="254.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="täring5" fitHeight="50.0" fitWidth="50.0" layoutX="254.0" layoutY="35.0" onMouseClicked="#täring5Vajutatud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/pildid/täring_1.png" />
                </image>

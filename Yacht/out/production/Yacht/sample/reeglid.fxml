@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MenüüController">
+   <children>
+      <Text layoutX="198.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Reeglid" textAlignment="CENTER" wrappingWidth="203.13671875">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selle mängu eesmärk on täringute kombinatsioonidega punkte teenida. Iga käigu alguses veeretatakse viis täringut. Siis saad valida täringuid, mida uuesti veeretada kuni kaks korda. Pärast veeretamist saab valida skoorimistingimuse. Kui kõik tingimused on kasutatud, siis suurima punktisummaga mängija on võitja" textAlignment="JUSTIFY" wrappingWidth="508.796875">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="190.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Skoorimistingimused">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1. Ühed (ühega täringud * 1)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2. Kahed (kahega täringud * 2)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3. Kolmed (kolmegatäringud * 3)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4. Neljad (neljaga täringud * 4)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="5. Viied (viiega täringud * 5)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="47.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="6. Kuued (kuuega täringud * 6)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="7. Maja (3 samasugust ja 2 samasugust)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="8. Nelik">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="9. 1-2-3-4-5 (järjekord pole oluline)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="324.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10. 2-3-4-5-6 (järjekord pole oluline)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="349.0" strokeType="OUTSIDE" strokeWidth="0.0" text="11. Täringute summa">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="294.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12. Yacht (5 samasugust)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Button layoutX="14.0" layoutY="5.0" mnemonicParsing="false" onAction="#tagasi" text="Tagasi">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</Pane>

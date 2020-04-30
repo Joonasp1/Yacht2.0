@@ -4,6 +4,8 @@ public class Täringud {
     private int[] täringud = new int[5];
     private int kordus = 0;
 
+    private static final int maxKordusteArv = 2; // Mitu korda saab uuesti veeretada peale esialgset veeretust.
+
     public int[] getTäringuVäärtused() {
         return täringud;
     }
@@ -11,6 +13,17 @@ public class Täringud {
     public int getKordus(){return kordus;}
 
     public void setKordus(int kordus){this.kordus = kordus;}
+
+    public void lisaKordus() {
+        kordus++;
+    }
+
+    public boolean võibUuestiVeeretada() {
+        if (kordus > maxKordusteArv) {
+            return false;
+        }
+        return true;
+    }
 
     public int[] veereta(){
         for (int i = 0; i < täringud.length; i++) {
