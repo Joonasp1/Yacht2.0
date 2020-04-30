@@ -74,6 +74,12 @@ public class MänguController implements Initializable {
     @FXML
     Button nupp12 = new Button("12. Yacht");
 
+    boolean t1Valitud = false;
+    boolean t2Valitud = false;
+    boolean t3Valitud = false;
+    boolean t4Valitud = false;
+    boolean t5Valitud = false;
+
     int mitu = 0;
 
     @Override
@@ -120,62 +126,75 @@ public class MänguController implements Initializable {
         tingimusteKast.getChildren().add(nupp1);
         nupp1.setOnMouseClicked(event -> {
             ühed(event);
+            mäng.getTäringud().setKordus(0);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp2);
         nupp2.setOnMouseClicked(event -> {
             kahed(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp3);
         nupp3.setOnMouseClicked(event -> {
             kolmed(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp4);
         nupp4.setOnMouseClicked(event -> {
             neljad(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp5);
         nupp5.setOnMouseClicked(event -> {
             viied(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp6);
         nupp6.setOnMouseClicked(event -> {
             kuued(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp7);
         nupp7.setOnMouseClicked(event -> {
             maja(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp8);
         nupp8.setOnMouseClicked(event -> {
             nelik(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp9);
         nupp9.setOnMouseClicked(event -> {
             allrida(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp10);
         nupp10.setOnMouseClicked(event -> {
             ülarida(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp11);
         nupp11.setOnMouseClicked(event -> {
             summa(event);
             tingimused.close();
+            mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp12);
         nupp12.setOnMouseClicked(event -> {
             yacht(event);
             tingimused.close();
+            mäng.järgmine();
         });
         Scene tingimusteStseen = new Scene(tingimusteKast, 300, 450);
         tingimused.setScene(tingimusteStseen);
@@ -183,16 +202,47 @@ public class MänguController implements Initializable {
     }
 
     public void veereta() {
+        String valik = "";
         Täringud täringud = mäng.getTäringud();
         täringud.lisaKordus();
         if (täringud.võibUuestiVeeretada()) {
             veeretaNupp.setText("Veereta uuesti");
+
         }
         else {
             veeretaNupp.setText("Veereta");
             veeretaNupp.setDisable(true);
         }
-        määraTäringud(mäng.getTäringud().veereta());
+        if(!t1Valitud && !t2Valitud && !t3Valitud && !t4Valitud && !t5Valitud) määraTäringud(mäng.getTäringud().veereta());
+        else {
+            if(t1Valitud){
+                valik += "1,";
+                täringTagasiAnimatsioon(täring1);
+                t1Valitud = false;
+            }
+            if(t2Valitud){
+                täringTagasiAnimatsioon(täring2);
+                valik += "2,";
+                t2Valitud = false;
+            }
+            if(t3Valitud){
+                täringTagasiAnimatsioon(täring3);
+                valik += "3,";
+                t3Valitud = false;
+            }
+            if(t4Valitud){
+                täringTagasiAnimatsioon(täring4);
+                valik += "4,";
+                t4Valitud = false;
+            }if(t5Valitud){
+                täringTagasiAnimatsioon(täring5);
+                valik += "5,";
+                t5Valitud = false;
+            }
+            String[] valikud = valik.split(",");
+            määraTäringud(mäng.getTäringud().veereta(mäng.getTäringud().getTäringuVäärtused(),valikud));
+
+        }
     }
 
     public void lõpukontroll() {
@@ -289,28 +339,37 @@ public class MänguController implements Initializable {
 
     public void täring1Vajutatud() {
         täringuKlõpsamiseAnimatsioon(täring1);
+        t1Valitud = true;
     }
 
     public void täring2Vajutatud() {
         täringuKlõpsamiseAnimatsioon(täring2);
+        t2Valitud = true;
     }
 
     public void täring3Vajutatud() {
         täringuKlõpsamiseAnimatsioon(täring3);
+        t3Valitud = true;
     }
 
     public void täring4Vajutatud() {
         täringuKlõpsamiseAnimatsioon(täring4);
+        t4Valitud = true;
     }
 
     public void täring5Vajutatud() {
         täringuKlõpsamiseAnimatsioon(täring5);
+        t5Valitud = true;
     }
 
     //------------------------------------------------
 
     private void täringuKlõpsamiseAnimatsioon(Node täring) {
         käivitaAnimatsioon(täring, 0, täringuKlõpsamiseYmuutus, täringuKlõpsamiseKestvus);
+    }
+
+    private void täringTagasiAnimatsioon(Node täring){
+        käivitaAnimatsioon(täring, 0, 0, täringuKlõpsamiseKestvus);
     }
 
     private TranslateTransition käivitaAnimatsioon(Node node, int x, int y, float kestvus) {

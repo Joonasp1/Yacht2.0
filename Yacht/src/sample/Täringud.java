@@ -33,9 +33,9 @@ public class Täringud {
         return täringud;
     }
 
-    public int[] veereta(int[] täringud, int[] uuesti){
-        for (int num : uuesti){
-            täringud[num - 1] = (int)(Math.round(Math.random()*5+1));
+    public int[] veereta(int[] täringud, String[] uuesti){
+        for (String num : uuesti){
+            täringud[Integer.parseInt(num) - 1] = (int)(Math.round(Math.random()*5+1));
         }
         return täringud;
     }
