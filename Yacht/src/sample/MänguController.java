@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.animation.TranslateTransition;
+import javafx.beans.binding.Bindings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -29,13 +31,15 @@ import java.util.ResourceBundle;
 public class MänguController implements Initializable {
 
     public static MänguController Instance;
-    private Mäng mäng;
+    public Mäng mäng;
 
     private static final int täringuKlõpsamiseYmuutus = -50;
     private static final float täringuKlõpsamiseKestvus = 0.2f;
 
     @FXML
     Label käiguLabel;
+    @FXML
+    Label labelMängija1Nimi, labelMängija2Nimi, labelMängija1Punktid, labelMängija2Punktid;
 
     @FXML
     HBox täringuteKast;
@@ -95,11 +99,65 @@ public class MänguController implements Initializable {
 
     public void alustaMäng(Mäng mäng){
         this.mäng = mäng;
+        nimedeValimine();
+    }
+
+    public void nimedeValimine() { // Mängijate nimede valimise ekraan.
+        final Stage nimed = new Stage();
+        nimed.initModality(Modality.APPLICATION_MODAL);
+        nimed.initOwner(käiguLabel.getScene().getWindow());
+        VBox kast = new VBox(20);
+
+        kast.getChildren().add(new Text("Mängija 1 nimi: "));
+        TextField nimi1Kast = new TextField();
+        kast.getChildren().add(nimi1Kast);
+
+        kast.getChildren().add(new Text("Mängija 1 nimi: "));
+        TextField nimi2Kast = new TextField();
+        kast.getChildren().add(nimi2Kast);
+
+        Button valmisNupp = new Button("Alusta");
+        kast.getChildren().add(valmisNupp);
+        valmisNupp.setOnMouseClicked(event -> {
+            Mängija mängija1 = new Mängija(nimi1Kast.getText());
+            Mängija mängija2 = new Mängija(nimi2Kast.getText());
+            Mängija[] mängijad = new Mängija[] {mängija1, mängija2};
+
+            labelMängija1Nimi.setText(mängija1.getNimi());
+            labelMängija2Nimi.setText(mängija2.getNimi());
+
+            mäng.alusta(mängijad);
+
+            nimed.close();
+        });
+
+        // Nuppu ei saa vajutada enne, kui mõlema mängija nimi on valitud.
+        valmisNupp.disableProperty().bind(
+                Bindings.isEmpty(nimi1Kast.textProperty())
+                        .and(Bindings.isEmpty(nimi2Kast.textProperty()))
+
+                        .or(Bindings.isNotEmpty(nimi1Kast.textProperty())
+                                .and(Bindings.isEmpty(nimi2Kast.textProperty())))
+
+                        .or(Bindings.isEmpty(nimi1Kast.textProperty())
+                                .and(Bindings.isNotEmpty(nimi2Kast.textProperty())))
+        );
+
+        Scene stseen = new Scene(kast, 300, 200);
+        nimed.setScene(stseen);
+        nimed.show();
     }
 
     public void määraKäik(Mängija mängija) {
         käiguLabel.setText(mängija.getNimi() + " käik");
         peidaTäringud();
+        veeretaNupp.setText("Veereta");
+        uuendaPunktiseisu();
+    }
+
+    public void uuendaPunktiseisu() {
+        labelMängija1Punktid.setText(String.valueOf(mäng.getMängijad()[0].getSkoor()));
+        labelMängija2Punktid.setText(String.valueOf(mäng.getMängijad()[1].getSkoor()));
     }
 
     public void määraTäringud(int[] numbrid) { // Muudab täringute pildid vastavalt etteantud numbritele.
@@ -224,6 +282,19 @@ public class MänguController implements Initializable {
         tingimused.show();
     }
 
+    public void kokkuvõte(ActionEvent sündmus) { // Kutsutakse välja kui mäng on lõppenud. Esitab kokkuvõtte mängust.
+        try {
+            Parent juur = FXMLLoader.load(getClass().getResource("kokkuvõte.fxml"));
+            Scene stseen = new Scene(juur);
+            Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
+
+            lava.setScene(stseen);
+            lava.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void veereta() {
         String valik = "";
         Täringud täringud = mäng.getTäringud();
@@ -271,6 +342,18 @@ public class MänguController implements Initializable {
     public void lõpukontroll() {
         if(mitu == 12){
             mäng.kokkuvõte();
+        }
+    }
+
+    public void mänguLõpp() {
+        try {
+            Parent juur = FXMLLoader.load(getClass().getResource("kokkuvõte.fxml"));
+            Scene stseen = new Scene(juur);
+            Stage lava = (Stage) (käiguLabel.getScene().getWindow());
+            lava.setScene(stseen);
+            lava.show();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 

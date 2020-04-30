@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="20.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.KokkuvõteController">
+   <children>
+      <Label text="Mäng on lõppenud!">
+         <font>
+            <Font name="JetBrains Mono Regular" size="18.0" />
+         </font></Label>
+      <Label text="Mängijate tulemused:" />
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+         <children>
+            <Label fx:id="mängija1Nimi" text="Mängija 1" />
+            <Label fx:id="mängija1Punktid" text="0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="50.0">
+         <children>
+            <Label fx:id="mängija2Nimi" text="Mängija 2" />
+            <Label fx:id="mängija2Punktid" text="0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0" spacing="20.0">
+         <children>
+            <Label text="Võitja on" />
+            <Label fx:id="labelVõitjaNimi" text="VÕITJA_NIMI" />
+            <Label text="punktisummaga" />
+            <Label fx:id="labelVõitjaPunktid" text="VÕITJA_PUNKTISUMMA" />
+         </children>
+      </HBox>
+   </children>
+</VBox>

@@ -21,23 +21,11 @@ public class MenüüController {
 
         lava.setScene(mängustseen);
         lava.show();
+
         new Mäng();
     }
 
-    /*
-    public void reeglid(ActionEvent sündmus) {
-        final Stage reeglid = new Stage();
-        reeglid.initModality(Modality.APPLICATION_MODAL);
-        reeglid.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
-        VBox reegliteKast = new VBox(20);
-        reegliteKast.getChildren().add(new Text(reeglidTekst));
-        Scene reegliteStseen = new Scene(reegliteKast, 300, 200);
-        reeglid.setScene(reegliteStseen);
-        reeglid.show();
-    }
-     */
-
-    public void reeglidtest(ActionEvent sündmus) throws IOException {
+    public void reeglid(ActionEvent sündmus) throws IOException {
         Parent juur = FXMLLoader.load(getClass().getResource("reeglid.fxml"));
         Scene reeglistseen = new Scene(juur);
         Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
@@ -46,13 +34,26 @@ public class MenüüController {
         lava.show();
     }
 
-    public void tagasi(ActionEvent sündmus) throws IOException{
+    public void tagasi(ActionEvent sündmus) throws IOException {
         Parent juur = FXMLLoader.load(getClass().getResource("menüü.fxml"));
         Scene reeglistseen = new Scene(juur);
         Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
 
         lava.setScene(reeglistseen);
         lava.show();
+    }
+
+    public void tippskoorid(ActionEvent sündmus) {
+        final Stage tippskoorid = new Stage();
+        tippskoorid.initModality(Modality.APPLICATION_MODAL);
+        tippskoorid.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
+        VBox kast = new VBox(20);
+        kast.getChildren().add(new Text(
+                Tippskoor.skoorid()
+        ));
+        Scene stseen = new Scene(kast, 300, 200);
+        tippskoorid.setScene(stseen);
+        tippskoorid.show();
     }
 
     public void lahku() {

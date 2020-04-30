@@ -8,19 +8,20 @@ public class Mäng {
     private Skoorimine skoor = new Skoorimine();
     private int tingumusvalik;
 
+    private Mängija võitja;
+    public Mängija getVõitja() {
+        return võitja;
+    }
+
     private int hetkeMängijaIndeks;
 
     public Mäng() {
         controller = MänguController.Instance;
         controller.alustaMäng(this);
-        alusta();
     }
 
-    public void alusta() {//Mängu alustamine
-        Mängija mängija1 = new Mängija("Mängija 1");
-        Mängija mängija2 = new Mängija("Mängija 2");
-        mängijad = new Mängija[] {mängija1, mängija2};
-
+    public void alusta(Mängija[] mängijad) {//Mängu alustamine
+        this.mängijad = mängijad;
         järgmine();
     }
 
@@ -73,10 +74,15 @@ public class Mäng {
             if(võitskoor < mängija.getSkoor()){
                 võitjanimi = mängija.getNimi();
                 võitskoor = mängija.getSkoor();
+
+                võitja = mängija;
             }
             //System.out.println(mängija.getNimi() + ": " + mängija.getSkoor());
         }
         //System.out.println("Võitja on " + võitjanimi + " punktisummaga " + võitskoor);
+
+        Tippskoor.kirjutaAndmed(võitjanimi, võitskoor);
+        controller.mänguLõpp();
     }
 
     public Mängija[] getMängijad() {

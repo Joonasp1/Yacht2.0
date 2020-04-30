@@ -7,6 +7,9 @@ public class Mängija {
     public String getNimi() {
         return nimi;
     }
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
+    }
 
     public int getSkoor() {return skoor;}
 
