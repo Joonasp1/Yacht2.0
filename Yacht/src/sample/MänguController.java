@@ -127,72 +127,95 @@ public class MänguController implements Initializable {
         nupp1.setOnMouseClicked(event -> {
             ühed(event);
             mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp2);
         nupp2.setOnMouseClicked(event -> {
             kahed(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp3);
         nupp3.setOnMouseClicked(event -> {
             kolmed(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp4);
         nupp4.setOnMouseClicked(event -> {
             neljad(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp5);
         nupp5.setOnMouseClicked(event -> {
             viied(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp6);
         nupp6.setOnMouseClicked(event -> {
             kuued(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp7);
         nupp7.setOnMouseClicked(event -> {
             maja(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp8);
         nupp8.setOnMouseClicked(event -> {
             nelik(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp9);
         nupp9.setOnMouseClicked(event -> {
             allrida(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp10);
         nupp10.setOnMouseClicked(event -> {
             ülarida(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp11);
         nupp11.setOnMouseClicked(event -> {
             summa(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
         tingimusteKast.getChildren().add(nupp12);
         nupp12.setOnMouseClicked(event -> {
             yacht(event);
+            mäng.getTäringud().setKordus(0);
+            veeretaNupp.setDisable(false);
             tingimused.close();
             mäng.järgmine();
         });
