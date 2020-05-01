@@ -177,7 +177,7 @@ public class MänguController implements Initializable {
     }
 
     public void valiSkoorimistingimus(ActionEvent sündmus) {
-        if(t1Valitud){
+        if(t1Valitud){//Kui täring valiti aga mindi skoorima - justkui veahaldus
             täringTagasiAnimatsioon(täring1);
             t1Valitud = false;
         }
@@ -202,7 +202,7 @@ public class MänguController implements Initializable {
         tingimused.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
         VBox tingimusteKast = new VBox(10);
         tingimusteKast.getChildren().add(nupp1);
-        nupp1.setOnMouseClicked(event -> {
+        nupp1.setOnMouseClicked(event -> {//nupp1-12 loogika - eemaldab võimaluse uuesti nuppu kasutada ja esimesel käigul skoorimise nuppu kasutada. Lisaks vahetab mängijat
             ühed(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
@@ -327,8 +327,8 @@ public class MänguController implements Initializable {
             veeretaNupp.setText("Veereta");
             veeretaNupp.setDisable(true);
         }
-        if(!t1Valitud && !t2Valitud && !t3Valitud && !t4Valitud && !t5Valitud) määraTäringud(mäng.getTäringud().veereta());
-        else {
+        if(!t1Valitud && !t2Valitud && !t3Valitud && !t4Valitud && !t5Valitud) määraTäringud(mäng.getTäringud().veereta());//Kui ühtegi täringut valitud pole, siis veeretatakse kõik
+        else {//Ehitatakse sõne, mis võetakse veeretamise meetodis vastu
             if(t1Valitud){
                 valik += "1,";
                 täringTagasiAnimatsioon(täring1);
@@ -377,8 +377,9 @@ public class MänguController implements Initializable {
         }
     }
 
+    //Skoorimise meetodid - võtab mängu klassist praeguse mängija ja kutsub välja liidaSkoor ja Skoorimine klassist skoori meetodi
     public void ühed(MouseEvent sündmus) {
-        mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(1,mäng.getTäringud().getTäringuVäärtused()));
+        mäng.getMängijad()[mäng.getHetkeMängijaIndeks()].liidaSkoor(mäng.getSkoor().skoori(1,mäng.getTäringud().getTäringuVäärtused()));//
         nupp1.setDisable(true);
         mitu++;
         lõpukontroll();
