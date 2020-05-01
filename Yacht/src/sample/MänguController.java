@@ -177,6 +177,26 @@ public class MänguController implements Initializable {
     }
 
     public void valiSkoorimistingimus(ActionEvent sündmus) {
+        if(t1Valitud){
+            täringTagasiAnimatsioon(täring1);
+            t1Valitud = false;
+        }
+        if(t2Valitud){
+            täringTagasiAnimatsioon(täring2);
+            t2Valitud = false;
+        }
+        if(t3Valitud){
+            täringTagasiAnimatsioon(täring3);
+            t3Valitud = false;
+        }
+        if(t4Valitud){
+            täringTagasiAnimatsioon(täring4);
+            t4Valitud = false;
+        }
+        if(t5Valitud){
+            täringTagasiAnimatsioon(täring5);
+            t5Valitud = false;
+        }
         final Stage tingimused = new Stage();
         tingimused.initModality(Modality.APPLICATION_MODAL);
         tingimused.initOwner(((Node)sündmus.getSource()).getScene().getWindow());
@@ -186,6 +206,7 @@ public class MänguController implements Initializable {
             ühed(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -194,6 +215,7 @@ public class MänguController implements Initializable {
             kahed(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -202,6 +224,7 @@ public class MänguController implements Initializable {
             kolmed(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -210,6 +233,7 @@ public class MänguController implements Initializable {
             neljad(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -218,6 +242,7 @@ public class MänguController implements Initializable {
             viied(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -226,6 +251,7 @@ public class MänguController implements Initializable {
             kuued(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -234,6 +260,7 @@ public class MänguController implements Initializable {
             maja(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -242,6 +269,7 @@ public class MänguController implements Initializable {
             nelik(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -250,6 +278,7 @@ public class MänguController implements Initializable {
             allrida(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -258,6 +287,7 @@ public class MänguController implements Initializable {
             ülarida(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -266,6 +296,7 @@ public class MänguController implements Initializable {
             summa(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -274,6 +305,7 @@ public class MänguController implements Initializable {
             yacht(event);
             mäng.getTäringud().setKordus(0);
             veeretaNupp.setDisable(false);
+            tingimuseNupp.setDisable(true);
             tingimused.close();
             mäng.järgmine();
         });
@@ -282,21 +314,9 @@ public class MänguController implements Initializable {
         tingimused.show();
     }
 
-    public void kokkuvõte(ActionEvent sündmus) { // Kutsutakse välja kui mäng on lõppenud. Esitab kokkuvõtte mängust.
-        try {
-            Parent juur = FXMLLoader.load(getClass().getResource("kokkuvõte.fxml"));
-            Scene stseen = new Scene(juur);
-            Stage lava = (Stage)((Node)sündmus.getSource()).getScene().getWindow();
-
-            lava.setScene(stseen);
-            lava.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
     public void veereta() {
         String valik = "";
+        tingimuseNupp.setDisable(false);
         Täringud täringud = mäng.getTäringud();
         täringud.lisaKordus();
         if (täringud.võibUuestiVeeretada()) {
